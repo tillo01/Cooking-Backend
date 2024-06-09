@@ -1,14 +1,50 @@
+// H2-TASK: 
+
+// Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
+// MASALAN: getDigits("m14i1t") return qiladi "141"
+
+
+
+function getDigits(digit:string):string{
+    let result = '';
+    for(let char of digit){
+      if(!isNaN(Number(char))){
+result += char;
+      }
+    }
+    return  result;
+
+}
+let result = getDigits("ewknf242");
+console.log(result);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // H-TASK: 
 
 // shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
 // MASALAN: getPositive([1, -4, 2]) return qiladi "12"
 
-function getPositive(numbers: number[]): string {
-    return numbers.filter(num => num > 0).join('');
-}
+// function getPositive(numbers: number[]): string {
+//     return numbers.filter(num => num > 0).join('');
+// }
 
-const result = getPositive([1, -4, 2,5,7,-8]);
-console.log(result); 
+// const result = getPositive([1, -4, 2,5,7,-8]);
+// console.log(result); 
 
 
 

@@ -16,7 +16,7 @@ restaurantController.goHome = ((req:Request, res:Response)=>{
     }
 });
 
-restaurantController.goLogin = ((req:Request,res:Response)=>{
+restaurantController.getLogin = ((req:Request,res:Response)=>{
 try {
     res.send("Login Page")
 } catch (err) {
@@ -25,7 +25,7 @@ try {
 }
 });
 
-restaurantController.goSign = ((req:Request,res:Response)=>{
+restaurantController.getSign = ((req:Request,res:Response)=>{
     try {
         res.send("Sign up Page")
         
