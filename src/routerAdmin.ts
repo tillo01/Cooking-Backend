@@ -9,6 +9,6 @@ routerAdmin.get("/login", restaurantController.goLogin);
 routerAdmin.get("/signup", restaurantController.goSign);
 
 
-export default router;
+export default routerAdmin;
 
 
