@@ -1,3 +1,23 @@
+
+
+/*Project Standards
+ - LOgin Standards
+ -Naming Standards
+     function,method,variable => CAMEL
+     class => PASCAL
+     folder => KEBAB 
+     css => SNAKE CASE 
+
+Error Handling
+
+
+
+
+*/ 
+
+
+
+
 // H2-TASK: 
 
 // Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
