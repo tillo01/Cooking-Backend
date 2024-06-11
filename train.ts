@@ -6,7 +6,7 @@
 
 
 function getDigits(digit:string):string{
-    let result = '';
+    let result: string = '';
     for(let char of digit){
       if(!isNaN(Number(char))){
 result += char;
@@ -15,8 +15,8 @@ result += char;
     return  result;
 
 }
-let result = getDigits("ewknf242");
-console.log(result);
+
+console.log(getDigits("ewknf242qwqwdqq344"));
 
 
 
