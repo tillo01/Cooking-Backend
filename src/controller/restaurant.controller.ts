@@ -9,6 +9,7 @@ const restaurantController: T = {};
 restaurantController.goHome = ((req:Request, res:Response)=>{
     try {
         res.send("Home Page");
+        // send/ json / redirect / end / render
         
     } catch (err) {
         console.log("Error,goHome", err);
@@ -31,6 +32,29 @@ restaurantController.getSign = ((req:Request,res:Response)=>{
         
     } catch (err) {
         console.log("Error, on sign up");
+        
+    }
+});
+
+
+restaurantController.processLogin = ((req:Request,res:Response)=>{
+    try {
+        console.log("processLogin");
+        res.send("DONE");
+        
+    } catch (err) {
+        console.log("Error, on processLgin");
+        
+    }
+});
+
+restaurantController.processSignup = ((req:Request,res:Response)=>{
+    try {
+        console.log("processSignup");
+        res.send("DONE");
+        
+    } catch (err) {
+        console.log("Error, on processSignup");
         
     }
 });
