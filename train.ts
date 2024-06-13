@@ -10,12 +10,15 @@
 
 Error Handling
 
-
-
-
 */ 
 
+/*
+API:
+Traditional API
+Rest API 
+GraphQL API
 
+*/
 
 
 // H2-TASK: 
