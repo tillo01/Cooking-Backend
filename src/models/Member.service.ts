@@ -8,7 +8,7 @@ class MemberService {
 
 
     constructor(){
-        this.memberModel =MemberModel;
+        this.memberModel = MemberModel;
     }
     public async processSignup(input:MemberInput):Promise<Member>{
         const exist = await this.memberModel
