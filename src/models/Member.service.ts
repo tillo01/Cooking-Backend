@@ -1,6 +1,6 @@
 import MemberModel from "../schema/Member.model";
 import { Member, MemberInput } from "../libs/types/member";
-import Errors, { HttpCode, Message } from "../libs/types/Error";
+import Errors, { HttpCode, Message } from "../libs/types/Errors";
 import { MemberType } from "../libs/enums/member.type";
 
 class MemberService {

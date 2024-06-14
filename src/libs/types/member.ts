@@ -5,7 +5,7 @@ export interface Member {
     _id:ObjectId;
     memberType: MemberType;
     memebrStatus: MemberStatus;
-    memeberNick:string;
+    memberNick:string;
     memberPhone:string;
     memberPassword:string;
     memberAddress?:string;
@@ -21,8 +21,8 @@ export interface Member {
 
 export interface MemberInput {
     memberType?: MemberType;
-    memebrStatus?: MemberStatus;
-    memeberNick:string;
+    membrStatus?: MemberStatus;
+    memberNick:string;
     memberPhone:string;
     memberPassword:string;
     memberAddress?:string;
