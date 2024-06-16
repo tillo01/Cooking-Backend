@@ -20,6 +20,42 @@ GraphQL API
 
 */
 
+// I-TASK:
+
+// Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
+// MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
+
+function getMajorEle(numbers: number []){
+  let maxcount = 0;
+  let majorEle = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    let  count = 0;
+    for (let j = 0; j < numbers.length; j++) 
+    if (numbers[i] == numbers[j]) {
+      count++;
+      
+    }
+if (count  > maxcount) {
+  maxcount = count
+  majorEle = numbers[i];
+  
+}
+      
+      
+    
+
+}
+return majorEle;
+}
+
+const result = getMajorEle([4,6,7,5,3,4,3]);
+
+console.log(result);
+
+
+
+
+
 
 // H2-TASK: 
 
@@ -28,18 +64,18 @@ GraphQL API
 
 
 
-function getDigits(digit:string):string{
-    let result: string = '';
-    for(let char of digit){
-      if(!isNaN(Number(char))){
-result += char;
-      }
-    }
-    return  result;
+// function getDigits(digit:string):string{
+//     let result: string = '';
+//     for(let char of digit){
+//       if(!isNaN(Number(char))){
+// result += char;
+//       }
+//     }
+//     return  result;
 
-}
+// }
 
-console.log(getDigits("ewknf242qwqwdqq344"));
+// console.log(getDigits("ewknf242qwqwdqq344"));
 
 
 
@@ -68,6 +104,10 @@ console.log(getDigits("ewknf242qwqwdqq344"));
 
 // const result = getPositive([1, -4, 2,5,7,-8]);
 // console.log(result); 
+
+
+
+
 
 
 
