@@ -27,6 +27,29 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 */
 
+
+// J-TASK: 
+
+// Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
+// MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
+
+function findLongestWord(str) {
+  const words = str.split(' ');
+
+  let longestWord = '';
+  for (let word of words) {
+      if (word.length > longestWord.length) {
+          longestWord = word;
+      }
+  }
+
+  return longestWord;
+}
+
+
+console.log(findLongestWord("I come from Uzbekistan")); 
+
+
 // I-TASK:
 
 // Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
