@@ -13,7 +13,9 @@ const memberService = new MemberService();
 const restaurantController: T = {};
 restaurantController.goHome = ((req:Request, res:Response)=>{
     try {
-        res.send("Home Page");
+        console.log("goHome");
+        
+        res.render("home");
         // send/ json / redirect / end / render
         
     } catch (err) {
@@ -24,16 +26,16 @@ restaurantController.goHome = ((req:Request, res:Response)=>{
 
 restaurantController.getLogin = ((req:Request,res:Response)=>{
 try {
-    res.send("Login Page")
+    res.render("login");
 } catch (err) {
     console.log("Erro,on login", err);
     
 }
 });
 
-restaurantController.getSign = ((req:Request,res:Response)=>{
+restaurantController.getSignup = ((req:Request,res:Response)=>{
     try {
-        res.send("Sign up Page")
+        res.render("signup");
         
     } catch (err) {
         console.log("Error, on sign up");
@@ -51,7 +53,7 @@ const input: LoginInput =req.body;
 const result = await memberService.processLogin(input);
 
     
-        res.send(result);
+        res.render("home");
         
     } catch (err) {
         console.log("Error, on processLgin");
