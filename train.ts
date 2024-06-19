@@ -20,6 +20,13 @@ GraphQL API
 
 */
 
+/*
+Traditional Frontend Development => BSSR  => EJS (framework)
+Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
+
+
+*/
+
 // I-TASK:
 
 // Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
@@ -38,17 +45,13 @@ function getMajorEle(numbers: number []){
 if (count  > maxcount) {
   maxcount = count
   majorEle = numbers[i];
-  
 }
-      
-      
-    
 
 }
 return majorEle;
 }
 
-const result = getMajorEle([4,6,7,5,3,4,3]);
+const result = getMajorEle([3,6,7,5,3,4,3,4,4]);
 
 console.log(result);
 
