@@ -13,10 +13,9 @@ memberController.signup = async (req:Request, res:Response) =>{
   try {
     console.log("signup");
     console.log("body",req.body);
-
-    const newMember:MemberInput = req.body,
+    const input:MemberInput = req.body,
      memberService = new MemberService(),
-   result:Member = await memberService.signup(newMember);
+   result:Member = await memberService.signup(input);
 
 
   // res.json({ member:result});
@@ -51,7 +50,7 @@ memberController.login = async (req:Request, res:Response) =>{
 
     res.send(result);
   } catch (err) {
-    console.log("Error, on login");
+    console.log("Error, on login",err);
     if(err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standard.code) .json(Errors.standard);
     
