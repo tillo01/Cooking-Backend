@@ -4,6 +4,7 @@ import { T } from '../libs/types/common';
 import MemberService from "../models/Member.service";
 import {AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
 import { MemberType } from "../libs/enums/member.type";
+import { Message } from "../libs/types/Errors";
 
 
 const memberService = new MemberService();
@@ -45,6 +46,30 @@ restaurantController.getSignup = ((req:Request,res:Response)=>{
 });
 
 
+
+restaurantController.processSignup = async (req:AdminRequest,res:Response)=>{
+    try {
+        console.log("processSignup");
+        console.log("Body:", req.body);
+        
+        const newMember: MemberInput = req.body;
+        newMember.memberType = MemberType.RESTAURANT;
+
+       const result = await memberService.processSignup(newMember);
+       
+            req.session.member = result;
+            req.session.save(function(){
+                res.send(result);
+            });
+
+
+        
+    } catch (err) {
+        console.log("Error, on processSignup",err);
+        res.send(err);
+    }
+}
+
 restaurantController.processLogin = async (req:AdminRequest,res:Response)=>{
     try {
         console.log("processLogin");
@@ -70,28 +95,23 @@ req.session.save(function(){
     }
 };
 
-restaurantController.processSignup = async (req:AdminRequest,res:Response)=>{
+restaurantController.checAuthSession = async (req:AdminRequest,res:Response)=>{
     try {
-        console.log("processSignup");
-        console.log("Body:", req.body);
-        
-        const newMember: MemberInput = req.body;
-        newMember.memberType = MemberType.RESTAURANT;
+        console.log("checAuthSession");
 
-       const result = await memberService.processSignup(newMember);
-       
-            req.session.member = result;
-            req.session.save(function(){
-                res.send(result);
-            });
+if (req.session?.member) res.send(`<script> alert("${req.session.member.memberNick})</script>`) ;
+    else res.send(`<script> alert("${Message.NOT_AUTHNTICATED})</script>`);
 
 
-        
+
     } catch (err) {
-        console.log("Error, on processSignup",err);
-        res.send(err);
+        console.log("Error, on processLgin");
+        res.send(err)
+        
     }
-}
+};
+
+
 
 
 export default restaurantController;

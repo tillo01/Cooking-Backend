@@ -12,7 +12,10 @@ routerAdmin
 
 routerAdmin
 .get("/signup", restaurantController.getSignup)
-.post("/signup", restaurantController.processSignup);
+.post("/signup", restaurantController.processSignup)
+
+.get("/check-me", restaurantController.checAuthSession)
+
 /* Product */ 
 
 /* user  */ 
