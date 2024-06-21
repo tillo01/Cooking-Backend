@@ -20,6 +20,9 @@ GraphQL API
 
 */
 
+
+
+
 /*
 Traditional Frontend Development => BSSR  => EJS (framework)
 Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
@@ -27,27 +30,48 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 */
 
+// K-TASK: 
+
+// Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
+// MASALAN: countVowels("string") return 1;
+
+function getVowels(str:string){
+  let vowelCount = 0;
+
+for (let b = 0; b < str.length; b++) {
+ if (str[b] === "a" || str[b] === "i" || str[b] === "e" || str[b] === "o" || str[b] === "u" ) {
+  vowelCount++;
+ }
+
+}
+return vowelCount;
+
+}
+
+const result = getVowels("stringagmagmowemnmuenfj");
+console.log(result);
+
 
 // J-TASK: 
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
 // MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
 
-function findLongestWord(str) {
-  const words = str.split(' ');
+// function findLongestWord(str) {
+//   const words = str.split(' ');
 
-  let longestWord = '';
-  for (let word of words) {
-      if (word.length > longestWord.length) {
-          longestWord = word;
-      }
-  }
+//   let longestWord = '';
+//   for (let word of words) {
+//       if (word.length > longestWord.length) {
+//           longestWord = word;
+//       }
+//   }
 
-  return longestWord;
-}
+//   return longestWord;
+// }
 
 
-console.log(findLongestWord("I come from Uzbekistan")); 
+// console.log(findLongestWord("I come from Uzbekistan")); 
 
 
 // I-TASK:
@@ -55,28 +79,28 @@ console.log(findLongestWord("I come from Uzbekistan"));
 // Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
 // MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
 
-function getMajorEle(numbers: number []){
-  let maxcount = 0;
-  let majorEle = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    let  count = 0;
-    for (let j = 0; j < numbers.length; j++) 
-    if (numbers[i] == numbers[j]) {
-      count++;
+// function getMajorEle(numbers: number []){
+//   let maxcount = 0;
+//   let majorEle = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     let  count = 0;
+//     for (let j = 0; j < numbers.length; j++) 
+//     if (numbers[i] == numbers[j]) {
+//       count++;
       
-    }
-if (count  > maxcount) {
-  maxcount = count
-  majorEle = numbers[i];
-}
+//     }
+// if (count  > maxcount) {
+//   maxcount = count
+//   majorEle = numbers[i];
+// }
 
-}
-return majorEle;
-}
+// }
+// return majorEle;
+// }
 
-const result = getMajorEle([3,6,7,5,3,4,3,4,4]);
+// const result = getMajorEle([3,6,7,5,3,4,3,4,4]);
 
-console.log(result);
+// console.log(result);
 
 
 
