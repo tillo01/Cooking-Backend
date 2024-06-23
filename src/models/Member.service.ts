@@ -4,6 +4,13 @@ import Errors, { HttpCode, Message } from "../libs/types/Errors";
 import { MemberType } from "../libs/enums/member.type";
 import * as bcrypt from "bcryptjs";
 
+
+
+
+// CONTROLLER SHU YERGA JONATADI FURST VA KEGIN MODELDAN SCHEMA MODELGA KETADI 
+
+
+
 class MemberService {
     private readonly memberModel;
  
