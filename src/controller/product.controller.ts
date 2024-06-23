@@ -24,6 +24,7 @@ if (err instanceof Errors) res.status(err.code).json(err);
 productController.createNewProduct = async (req:Request, res:Response)=>{
 try{
     console.log("createNewProduct");
+    res.send("done");
     
 
 }
