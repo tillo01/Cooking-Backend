@@ -30,26 +30,56 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 */
 
+// L-TASK: 
+
+// Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
+// MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
+
+
+function reverseSentence(str:string){
+  let asItis = str.split(' ').reverse() .join( ' ');
+  
+    let example = ' '; 
+   
+   
+
+    for (let i = asItis.length -1; i >= 0 ; i--) {
+      example+=asItis[i];
+
+    }
+    
+    return example;
+
+}
+const result = reverseSentence("hello how are you");
+
+console.log(result);
+
+
+
+
+
+
 // K-TASK: 
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
 // MASALAN: countVowels("string") return 1;
 
-function getVowels(str:string){
-  let vowelCount = 0;
+// function getVowels(str:string){
+//   let vowelCount = 0;
 
-for (let b = 0; b < str.length; b++) {
- if (str[b] === "a" || str[b] === "i" || str[b] === "e" || str[b] === "o" || str[b] === "u" ) {
-  vowelCount++;
- }
+// for (let b = 0; b < str.length; b++) {
+//  if (str[b] === "a" || str[b] === "i" || str[b] === "e" || str[b] === "o" || str[b] === "u" ) {
+//   vowelCount++;
+//  }
 
-}
-return vowelCount;
+// }
+// return vowelCount;
 
-}
+// }
 
-const result = getVowels("stringagmagmowemnmuenfj");
-console.log(result);
+// const result = getVowels("stringagmagmowemnmuenfj");
+// console.log(result);
 
 
 // J-TASK: 
