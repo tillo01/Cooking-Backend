@@ -28,8 +28,19 @@ export interface ProductInput{
     productDesc?:string;
     productImages?:string[];
     productViews?: number;
+}
 
-
-
+export interface ProductUpdateInput{
+    _di:ObjectId;
+    productStatus?:ProductStatus;
+    productCollection?:ProductCollection;
+    productName?:string;
+    productPrice?:number;
+    productLeftCount?:number;
+    productSize?:ProductSize;
+    productVolume?:number;
+    productDesc?:string;
+    productImages?:string[];
+    productViews?: number;
 }
 

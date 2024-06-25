@@ -13,6 +13,7 @@ const memberService = new MemberService();
 
 
 
+
 const restaurantController: T = {};
 restaurantController.goHome = ((req:Request, res:Response)=>{
     try {
