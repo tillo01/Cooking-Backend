@@ -23,6 +23,9 @@ GraphQL API
 
 
 
+
+
+
 /*
 Traditional Frontend Development => BSSR  => EJS (framework)
 Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
@@ -30,30 +33,74 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 */
 
+// M-TASK: 
+
+// Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
+// MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}];
+
+
+function getSQ(arr: number[]):any {
+  let resObj = { squares: [] };
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+      count++;
+      
+      const ex1 = arr[i] ** 2;
+      resObj.squares.push[ex1]; 
+  }
+  
+  return resObj;
+}
+
+const ex = getSQ([4,2,5]);
+console.log(ex);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // L-TASK: 
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
 // MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
 
 
-function reverseSentence(str:string){
-  let asItis = str.split(' ').reverse() .join( ' ');
+// function reverseSentence(str:string){
+//   let asItis = str.split(' ').reverse() .join( ' ');
   
-    let example = ' '; 
+//     let example = ' '; 
    
    
 
-    for (let i = asItis.length -1; i >= 0 ; i--) {
-      example+=asItis[i];
+//     for (let i = asItis.length -1; i >= 0 ; i--) {
+//       example+=asItis[i];
 
-    }
+//     }
     
-    return example;
+//     return example;
 
-}
-const result = reverseSentence("hello how are you");
+// }
+// const result = reverseSentence("hello how are you");
 
-console.log(result);
+// console.log(result);
 
 
 
@@ -119,16 +166,17 @@ console.log(result);
 //       count++;
       
 //     }
-// if (count  > maxcount) {
+// if (count  >= maxcount) {
 //   maxcount = count
 //   majorEle = numbers[i];
 // }
+
 
 // }
 // return majorEle;
 // }
 
-// const result = getMajorEle([3,6,7,5,3,4,3,4,4]);
+// const result = getMajorEle([3,4,6,7,3,5,3,4,3,4,4]);
 
 // console.log(result);
 
