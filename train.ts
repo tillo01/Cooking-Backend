@@ -39,18 +39,19 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 // MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}];
 
 
-function getSQ(arr: number[]):any {
-  let resObj = { squares: [] };
+function getSQ(arr: number[]):{number:number, square:number}[] {
+  let result: { number: number, square:number }[] =[];
   let count = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-      count++;
-      
-      const ex1 = arr[i] ** 2;
-      resObj.squares.push[ex1]; 
+  for (let num of arr) {
+    
+      const square = num ** 2;
+      let obj = {number:num, square:square};
+
+      result.push(obj);
   }
   
-  return resObj;
+  return  result;
 }
 
 const ex = getSQ([4,2,5]);
