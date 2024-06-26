@@ -20,7 +20,7 @@ try {
     
     
     console.log("getAllProducts" );
-    res.render("products",{hello:data});
+    res.render("products",{products:data});
     
 } catch (err) {
 

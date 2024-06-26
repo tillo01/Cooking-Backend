@@ -54,26 +54,9 @@ function getSQ(arr: number[]):{number:number, square:number}[] {
   return  result;
 }
 
+
 const ex = getSQ([4,2,5]);
 console.log(ex);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

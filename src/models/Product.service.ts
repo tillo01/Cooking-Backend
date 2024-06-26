@@ -22,11 +22,9 @@ class ProductService  {
 
         const result = await this.productModel.find().exec();
         
-        if (!result) throw new Errors(HttpCode.NOT_FOUND,Message.UPDATED_FAILED);
+        if (!result) throw new Errors(HttpCode.NOT_FOUND,Message.NO_DATA_FOUND);
         
         return result;
-        
-            
         
      }
 
