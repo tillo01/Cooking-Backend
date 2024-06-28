@@ -33,30 +33,49 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 */
 
+// N-TASK: 
+
+// Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
+// MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
+
+function getSameOnly(str:string) {
+  str = str.toLowerCase();
+  const willUse = str.split('').reverse().join('');
+  return str === willUse;
+}
+
+console.log(getSameOnly("hello")); 
+ 
+
+
+
+
+
+
 // M-TASK: 
 
 // Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
 // MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}];
 
 
-function getSQ(arr: number[]):{number:number, square:number}[] {
-  let result: { number: number, square:number }[] =[];
-  let count = 0;
+// function getSQ(arr: number[]):{number:number, square:number}[] {
+//   let result: { number: number, square:number }[] =[];
+//   let count = 0;
 
-  for (let num of arr) {
+//   for (let num of arr) {
     
-      const square = num ** 2;
-      let obj = {number:num, square:square};
+//       const square = num ** 2;
+//       let obj = {number:num, square:square};
 
-      result.push(obj);
-  }
+//       result.push(obj);
+//   }
   
-  return  result;
-}
+//   return  result;
+// }
 
 
-const ex = getSQ([4,2,5]);
-console.log(ex);
+// const ex = getSQ([4,2,5]);
+// console.log(ex);
 
 
 
