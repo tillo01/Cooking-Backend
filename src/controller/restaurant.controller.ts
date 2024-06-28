@@ -143,16 +143,16 @@ restaurantController.getUsers = async (req:Request,res:Response)=>{
 restaurantController.updateChoosenUser = async (req:Request,res:Response)=>{
     try {
         console.log("updateChoosenUser");
-
-       req.session.destroy(function(){
-       })
-        
+        const result = await memberService.updateChoosenUser(req.body);
+        res.status(HttpCode.OK).json({data:result});
+  
     } catch (err) {
-        console.log("Error, on updateChoosenUser",err);
-
-        
+        console.log("Error, on updateChoosenUser",err); 
+        if(err instanceof Errors) res.status(err.code).json(err);
+        else res.status(Errors.standard.code) .json(Errors.standard); 
     }
 };
+
 // checAuthSession
 restaurantController.checAuthSession = async (req:AdminRequest,res:Response)=>{
     try {
