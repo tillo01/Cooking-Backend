@@ -96,8 +96,15 @@ const isMatch = await bcrypt.compare(input. memberPassword,
     return  await this.memberModel.findById(member._id).exec();
 
 
+    }
 
 
+    public async getUsers():Promise<Member[]>{ 
+       
+        const result = await this.memberModel.find({memberType : MemberType.USER}).exec()
+        if(!result) throw new Errors(HttpCode.NOT_MODIFIED,Message.NO_DATA_FOUND);
+        return result;
+        
     }
 }
 

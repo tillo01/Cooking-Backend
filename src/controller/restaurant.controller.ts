@@ -9,11 +9,7 @@ import Errors, { HttpCode, Message } from "../libs/types/Errors";
 
 
 const memberService = new MemberService();
-
-
-
-
-
+// gohome
 const restaurantController: T = {};
 restaurantController.goHome = ((req:Request, res:Response)=>{
     try {
@@ -30,16 +26,7 @@ restaurantController.goHome = ((req:Request, res:Response)=>{
     }
 });
 
-restaurantController.getLogin = ((req:Request,res:Response)=>{
-try {
-    res.render("login");
-} catch (err) {
-    console.log("Erro,on login", err);
-    res.redirect("/admin");
-    
-}
-});
-
+// getSignup
 restaurantController.getSignup = ((req:Request,res:Response)=>{
     try {
         res.render("signup");
@@ -50,9 +37,18 @@ restaurantController.getSignup = ((req:Request,res:Response)=>{
         
     }
 });
+// getLogin
+restaurantController.getLogin = ((req:Request,res:Response)=>{
+try {
+    res.render("login");
+} catch (err) {
+    console.log("Erro,on login", err);
+    res.redirect("/admin");
+    
+}
+});
 
-
-
+// processSignup
 restaurantController.processSignup = async (req:AdminRequest,res:Response)=>{
     try {
         console.log("processSignup");
@@ -80,7 +76,7 @@ if(!file)
         res.send(`<script> alert("${message}"); window.location.replace('admin/signup');</script>`);
     }
 }
-
+// processLogin
 restaurantController.processLogin = async (req:AdminRequest,res:Response)=>{
     try {
         console.log("processLogin");
@@ -95,9 +91,7 @@ req.session.save(function(){
 
 });
 
-
-    
-        // res.send(result);
+  // res.send(result);
         
     } catch (err) {
         console.log("Error, on processLgin");
@@ -110,7 +104,7 @@ req.session.save(function(){
 };
 
 
-
+// logout
 restaurantController.logout = async (req:AdminRequest,res:Response)=>{
     try {
         console.log("logout");
@@ -127,6 +121,39 @@ restaurantController.logout = async (req:AdminRequest,res:Response)=>{
     }
 };
 
+    // getUsers
+restaurantController.getUsers = async (req:Request,res:Response)=>{
+    try {
+        const result  = await memberService.getUsers();
+        console.log("result", result);
+
+
+       res.render("users", { users: result});
+      
+        
+    } catch (err) {
+        console.log("Error, on getUsers",err);
+        res.redirect("/admin/login");
+
+        
+    }
+};
+
+    // updateChoosenUser
+restaurantController.updateChoosenUser = async (req:Request,res:Response)=>{
+    try {
+        console.log("updateChoosenUser");
+
+       req.session.destroy(function(){
+       })
+        
+    } catch (err) {
+        console.log("Error, on updateChoosenUser",err);
+
+        
+    }
+};
+// checAuthSession
 restaurantController.checAuthSession = async (req:AdminRequest,res:Response)=>{
     try {
         console.log("checAuthSession");
@@ -143,7 +170,7 @@ if (req.session?.member) res.send(`<script> alert("${req.session.member.memberNi
     }
 };
 
-
+// verifyRestaurant
 restaurantController.verifyRestaurant = (req:AdminRequest,
      res:Response,
       next:NextFunction)=>{

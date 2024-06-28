@@ -8,9 +8,11 @@
                 <%=member.memberNick%>
                     <%products.map(function(value,key){ %>
                         <p>
-                            <%= value.productName %>
+                            <%= value.productImages %>
                                 <%= value.productSize %>
                         </p>
+
+                        <img src="<%= value.productImages %>" alt="images">
 
                         <%})%>
             </div>
