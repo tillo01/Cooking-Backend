@@ -33,18 +33,38 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 */
 
+function getSameOnly(getSame:any){
+let  reversed = "";
+for (let i = getSame.length -1; i>= 0; i--) {
+reversed+=getSame[i];
+
+}
+if (getSame === reversed) {
+  return true;
+}else {
+  return false;
+}
+
+}
+
+let result = getSameOnly("dad");
+
+console.log(result);
+
+
+
 // N-TASK: 
 
 // Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
 // MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
 
-function getSameOnly(str:string) {
-  str = str.toLowerCase();
-  const willUsee = str.split('').reverse().join('');
-  return str === willUsee;
-}
+// function getSameOnly(str:string) {
+//   str = str.toLowerCase();
+//   const willUsee = str.split('').reverse().join('');
+//   return str === willUsee;
+// }
 
-console.log(getSameOnly("hello")); 
+// console.log(getSameOnly("hello")); 
  
 
 
