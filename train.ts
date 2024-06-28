@@ -40,16 +40,12 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 function getSameOnly(str:string) {
   str = str.toLowerCase();
-  const willUse = str.split('').reverse().join('');
-  return str === willUse;
+  const willUsee = str.split('').reverse().join('');
+  return str === willUsee;
 }
 
 console.log(getSameOnly("hello")); 
  
-
-
-
-
 
 
 // M-TASK: 
