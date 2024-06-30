@@ -33,23 +33,50 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 */
 
-function getSameOnly(getSame:any){
-let  reversed = "";
-for (let i = getSame.length -1; i>= 0; i--) {
-reversed+=getSame[i];
 
+// O-TASK:
+
+// Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
+// MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
+
+function calculateSumOfNumbers(arr:any[]) {
+  let sum = 0; 
+
+
+  for (let i = 0; i < arr.length; i++) {
+ 
+      if (typeof arr[i] === 'number') {
+          sum += arr[i];
+      }
+  }
+
+  return sum; 
 }
-if (getSame === reversed) {
-  return true;
-}else {
-  return false;
-}
 
-}
 
-let result = getSameOnly("dad");
+const result = calculateSumOfNumbers(["kqhwbjhbqd10jewewjf25"]);
+console.log(result); 
 
-console.log(result);
+
+
+
+// function getSameOnly(getSame:any){
+// let  reversed = "";
+// for (let i = getSame.length -1; i>= 0; i--) {
+// reversed+=getSame[i];
+
+// }
+// if (getSame === reversed) {
+//   return true;
+// }else {
+//   return false;
+// }
+
+// }
+
+// let result = getSameOnly("dad");
+
+// console.log(result);
 
 
 
