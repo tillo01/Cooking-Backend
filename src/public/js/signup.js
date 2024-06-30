@@ -9,7 +9,7 @@ $(function(){
             const uploadFile = $(this)[0].files[0];
             const fileType = uploadFile["type"]; // check you are choosen the right variables 
              const validImageType =["image/jpeg","image/jpg","image/png"];
-            if(!validImageType){
+            if(!validImageType.includes(fileType)){
 alert("Please insert only jpeg and png");
             }else {
                 if(uploadFile);
