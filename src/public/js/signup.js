@@ -7,12 +7,12 @@ $(function(){
     fileTarget.on("change",function(){
         if (window.FileReader) {
             const uploadFile = $(this)[0].files[0];
-            const fileType = uploadFile["type"]; // check you are choosen the right variables 
-             const validImageType =["image/jpeg","image/jpg","image/png"];
+            const fileType = uploadFile["type"]; // check you have choosen the right variables 
+            const validImageType =["image/jpeg","image/jpg","image/png"];
             if(!validImageType.includes(fileType)){
 alert("Please insert only jpeg and png");
             }else {
-                if(uploadFile);
+                if(uploadFile)
                 console.log(URL.createObjectURL(uploadFile));
 $(".upload-img-frame").attr("src",URL.createObjectURL(uploadFile)).addClass("succes");
                 
@@ -40,7 +40,7 @@ function validateSignupform(){
         alert("Password differs, please check !");
         return false;
     }
-    const memberImage = $(".member-image").get(0).files[0] ? $(".member-image").get(0).files[0].name :null;
+    const memberImage = $(".member-image").get(0).files[0] ? $(".member-image").get(0).files[0]?.name :null;
     if (!memberImage) {
         alert("Please restaurant image");
         return false;
