@@ -39,6 +39,63 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 // Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
 // MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45
 
+function getDigits(getNum:any[]) {
+    let sum = 0;
+    let calculate = '';
+    for (let i = 0; i < getNum.length; i++) {
+     if (!isNaN(number)) {
+        
+     }   
+    }
+    
+}
+
+// function getDigitsSum(getNum) {
+//     let sum = 0;
+//     let numBuffer = '';
+    
+//     // Extract the string from the array
+//     let str = getNum[0];
+    
+//     // Iterate over each character in the string
+//     for (let char of str) {
+//       // Check if the character is a digit
+//       if (!isNaN(char) && char !== ' ') {
+//         numBuffer += char;
+//       } else {
+//         // If the buffer is not empty, convert it to a number and add to the sum
+//         if (numBuffer) {
+//           sum += parseInt(numBuffer);
+//           numBuffer = ''; // Reset the buffer
+//         }
+//       }
+//     }
+    
+//     // Add the last number in the buffer, if any
+//     if (numBuffer) {
+//       sum += parseInt(numBuffer);
+//     }
+    
+//     return sum;
+//   }
+  
+//   const result = getDigitsSum(["ewkfwe35wejnfwne55"]);
+//   console.log(result);  // Output should be 15
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
