@@ -16,9 +16,7 @@ $(function () {
         memberStatus: memberStatus,
       })
       .then((response) => {
-        console.log(response);
         const result = response.data;
-        console.log("result:", result);
         if (result.data) {
           console.log("User updated");
           $(".member-status").blur();
