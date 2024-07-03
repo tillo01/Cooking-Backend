@@ -40,11 +40,11 @@
                 </tr>
               </thead>
               <!--  LOOP PRODUCTS: START  -->
-              <% products.map(function(value,key){ %>
+              <% products.map(function(value,index){ %>
 
                 <tbody style="background: white">
                   <td>
-                    <%= key + 1 %>
+                    <%= index + 1 %>
                   </td>
                   <td>
                     <%= value.productName %>
