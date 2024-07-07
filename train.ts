@@ -27,19 +27,54 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 */
 
+// R-TASK:
+
+// Shunday function yozing, u string parametrga ega bolsin. String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
+// MASALAN: calculate("1+3") return 4;
+
+function getOnlyPlusNums(input: string): number | null {
+  let sum = 0;
+  let foundMatch = false;
+
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === "+") {
+      let leftNum = "";
+      let rightNum = "";
+
+      for (let j = i - 1; j >= 0 && !isNaN(parseInt(input[j])); j--) {
+        leftNum = input[j] + leftNum;
+      }
+
+      for (let k = i + 1; k < input.length && !isNaN(parseInt(input[k])); k++) {
+        rightNum += input[k];
+      }
+
+      if (leftNum && rightNum) {
+        sum += parseInt(leftNum) + parseInt(rightNum);
+        foundMatch = true;
+      }
+    }
+  }
+
+  return foundMatch ? sum : null;
+}
+
+const result = getOnlyPlusNums("jnfwn1+4wnfjwnf3wmfw2");
+console.log(result);
+
 // P-TASK:
 
 // Shunday function yozing, u object qabul qilsin va arrayni object arrayga otkazib arrayni qaytarsin qaytarsin.
 // MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 
-function objToArr(obj: { [key: string]: any }): [string, any][] {
-  return Object.entries(obj);
-}
-const objInput = { name: "Tillo", age: 21 };
+// function objToArr(obj: { [key: string]: any }): [string, any][] {
+//   return Object.entries(obj);
+// }
+// const objInput = { name: "Tillo", age: 21 };
 
-const result = objToArr(objInput);
+// const result = objToArr(objInput);
 
-console.log(result);
+// console.log(result);
 
 // N-TASK:
 
