@@ -27,40 +27,75 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 */
 
+// S-TASK:
+
+// Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin va osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin
+// MASALAN: missingNumber([3, 0, 1]) return 2
+
+function getMissOne(getNum: number[]): number[] {
+  const count = 10;  
+  let missingNum: number[] = [];
+
+  for (let i = 1; i <= count; i++) {
+    if (getNum.indexOf(i) === -1) {
+      missingNum.push(i);
+    }
+  }
+
+  return missingNum;
+}
+
+const missingNum = getMissOne([3, 4, 2]);
+
+console.log(missingNum); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // R-TASK:
 
 // Shunday function yozing, u string parametrga ega bolsin. String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini number holatda qaytarsin.
 // MASALAN: calculate("1+3") return 4;
 
-function getOnlyPlusNums(input: string): number | null {
-  let sum = 0;
-  let foundMatch = false;
+// function getOnlyPlusNums(input: string): number | null {
+//   let sum = 0;
+//   let foundMatch = false;
 
-  for (let i = 0; i < input.length; i++) {
-    if (input[i] === "+") {
-      let leftNum = "";
-      let rightNum = "";
+//   for (let i = 0; i < input.length; i++) {
+//     if (input[i] === "+") {
+//       let leftNum = "";
+//       let rightNum = "";
 
-      for (let j = i - 1; j >= 0 && !isNaN(parseInt(input[j])); j--) {
-        leftNum = input[j] + leftNum;
-      }
+//       for (let j = i - 1; j >= 0 && !isNaN(parseInt(input[j])); j--) {
+//         leftNum = input[j] + leftNum;
+//       }
 
-      for (let k = i + 1; k < input.length && !isNaN(parseInt(input[k])); k++) {
-        rightNum += input[k];
-      }
+//       for (let k = i + 1; k < input.length && !isNaN(parseInt(input[k])); k++) {
+//         rightNum += input[k];
+//       }
 
-      if (leftNum && rightNum) {
-        sum += parseInt(leftNum) + parseInt(rightNum);
-        foundMatch = true;
-      }
-    }
-  }
+//       if (leftNum && rightNum) {
+//         sum += parseInt(leftNum) + parseInt(rightNum);
+//         foundMatch = true;
+//       }
+//     }
+//   }
 
-  return foundMatch ? sum : null;
-}
+//   return foundMatch ? sum : null;
+// }
 
-const result = getOnlyPlusNums("jnfwn1+4wnfjwnf3wmfw2");
-console.log(result);
+// const result = getOnlyPlusNums("jnfwn1+4wnfjwnf3wmfw2");
+// console.log(result);
 
 // P-TASK:
 
