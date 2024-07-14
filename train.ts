@@ -24,43 +24,62 @@ GraphQL API
 Traditional Frontend Development => BSSR  => EJS (framework)
 Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
 
-
 */
+
+function sortedArrays(arr1: number[], arr2: number[]): number[] {
+  let mergedArray: number[] = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      mergedArray.push(arr1[i]);
+      i++;
+    } else {
+      mergedArray.push(arr2[j]);
+      j++;
+    }
+  }
+
+  while (i < arr1.length) {
+    mergedArray.push(arr1[i]);
+    i++;
+  }
+
+  while (j < arr2.length) {
+    mergedArray.push(arr2[j]);
+    j++;
+  }
+
+  return mergedArray;
+}
+
+const result = sortedArrays([0, 3, 4, 31], [4, 6, 30]);
+console.log(result);
 
 // S-TASK:
 
 // Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin va osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin
 // MASALAN: missingNumber([3, 0, 1]) return 2
 
-function getMissOne(getNum: number[]): number[] {
-  const count = 10;  
-  let missingNum: number[] = [];
+// function getMissOne(getNum: number[]): number[] {
+//   const count = 10;
+//   let missingNum: number[] = [];
 
-  for (let i = 1; i <= count; i++) {
-    if (getNum.indexOf(i) === -1) {
-      missingNum.push(i);
-    }
-  }
+//   for (let i = 1; i <= count; i++) {
+//     if (getNum.indexOf(i) === -1) {
+//       missingNum.push(i);
+//     }
+//   }
 
-  return missingNum;
-}
+//   return missingNum;
+// }
 
-const missingNum = getMissOne([3, 4, 2]);
+// const missingNum = getMissOne([3, 4, 2]);
 
-console.log(missingNum); 
+// console.log(missingNum);
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* Rectangle */
 
 // R-TASK:
 
