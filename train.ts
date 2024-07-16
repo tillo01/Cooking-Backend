@@ -25,36 +25,22 @@ Traditional Frontend Development => BSSR  => EJS (framework)
 Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
 
 */
+// V-TASK:
 
-function sortedArrays(arr1: number[], arr2: number[]): number[] {
-  let mergedArray: number[] = [];
-  let i = 0;
-  let j = 0;
+// Shunday function yozing, uni string parametri bolsin va stringdagi harf va u harf necha marta takrorlangani sonidan tashkil topgan object qaytarsin.
+// MASALAN: countChars("hello") return {h: 1, e: 1, l: 2, o: 1}
 
-  while (i < arr1.length && j < arr2.length) {
-    if (arr1[i] < arr2[j]) {
-      mergedArray.push(arr1[i]);
-      i++;
-    } else {
-      mergedArray.push(arr2[j]);
-      j++;
-    }
+function getChars(str: string): { [key: string]: number } {
+  const charCount: { [key: string]: number } = {};
+
+  for (let char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
   }
 
-  while (i < arr1.length) {
-    mergedArray.push(arr1[i]);
-    i++;
-  }
-
-  while (j < arr2.length) {
-    mergedArray.push(arr2[j]);
-    j++;
-  }
-
-  return mergedArray;
+  return charCount;
 }
 
-const result = sortedArrays([0, 3, 4, 31], [4, 6, 30]);
+const result = getChars("hello");
 console.log(result);
 
 // S-TASK:
