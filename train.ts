@@ -25,23 +25,39 @@ Traditional Frontend Development => BSSR  => EJS (framework)
 Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
 
 */
+
+// W-TASK:
+
+// Shunday function yozing, uni array va number parametrlari bolsin. Function arrayni numberda berilgan uzunlikda kesib bolaklarga ajratilgan array holatida qaytarsin
+// MASALAN: chunkArray([1,2,3,4,5,6,7,8,9,10], 3) return [[1,2,3], [4,5,6], [7,8,9], [10]]
+
+function getDividedNum<T>(array: T[], size: number): T[][] {
+  let result: T[][] = [];
+  for (let i = 0; i < array.length; i += size) {
+    result.push(array.slice(i, i + size));
+  }
+  return result;
+}
+
+console.log(getDividedNum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
 // V-TASK:
 
 // Shunday function yozing, uni string parametri bolsin va stringdagi harf va u harf necha marta takrorlangani sonidan tashkil topgan object qaytarsin.
 // MASALAN: countChars("hello") return {h: 1, e: 1, l: 2, o: 1}
 
-function getChars(str: string): { [key: string]: number } {
-  const charCount: { [key: string]: number } = {};
+// function getChars(str: string): { [key: string]: number } {
+//   const charCount: { [key: string]: number } = {};
 
-  for (let char of str) {
-    charCount[char] = (charCount[char] || 0) + 1;
-  }
+//   for (let char of str) {
+//     charCount[char] = (charCount[char] || 0) + 1;
+//   }
 
-  return charCount;
-}
+//   return charCount;
+// }
 
-const result = getChars("hello");
-console.log(result);
+// const result = getChars("hello");
+// console.log(result);
 
 // S-TASK:
 
