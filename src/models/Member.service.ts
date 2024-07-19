@@ -44,6 +44,7 @@ class MemberService {
     console.log("isMacth", isMatch);
 
     if (!isMatch) throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
+
     return await this.memberModel.findById(member._id).lean().exec();
   }
 
@@ -69,6 +70,9 @@ class MemberService {
       throw new Errors(HttpCode.BAD_RQUEST, Message.CREATE_FAILED);
     }
   }
+
+  // Log in
+
   public async processLogin(input: LoginInput): Promise<Member> {
     const member = await this.memberModel.findOne({ memberNick: input.memberNick }, { memberNick: 1, memberPassword: 1 }).exec();
 
