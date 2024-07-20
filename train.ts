@@ -26,20 +26,61 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 */
 
+// X-TASK:
+
+//  Shunday function yozing, uni object va string parapetrlari bolsin. Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
+//  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+
+function getAccuranceOfStr(obj: any, key: string): any {
+  let count = 0;
+  let k = "";
+  for (k in obj) {
+    if (k === key) {
+      count++;
+    }
+  }
+
+  if (typeof obj[k] === "object" && obj[k] !== null) {
+    count += getAccuranceOfStr(obj[k], key);
+  }
+  return count;
+}
+
+const result = getAccuranceOfStr({ model: "BUgatti", steer: { model: "Hankook", size: 30 } }, "model");
+console.log(result);
+
+// function getAccuranceOfStr(obj: Object, key: string): number {
+//   let count = 0;
+
+//   function currentObjSearch(currentObj: any): any {
+//     let k = "";
+//     for (k in currentObj) if (k === key) count++;
+//     if (typeof currentObj[k] === "object" && currentObj[k] !== null) {
+//       currentObjSearch(currentObj[k]);
+//     }
+//   }
+//   currentObjSearch(obj);
+
+//   return count;
+// }
+
+// const result = getAccuranceOfStr({ model: "BUgatti", steer: { model: "Hankook", size: 30 } }, "model");
+// console.log(result);
+
 // W-TASK:
 
 // Shunday function yozing, uni array va number parametrlari bolsin. Function arrayni numberda berilgan uzunlikda kesib bolaklarga ajratilgan array holatida qaytarsin
 // MASALAN: chunkArray([1,2,3,4,5,6,7,8,9,10], 3) return [[1,2,3], [4,5,6], [7,8,9], [10]]
 
-function getDividedNum<T>(array: T[], size: number): T[][] {
-  let result: T[][] = [];
-  for (let i = 0; i < array.length; i += size) {
-    result.push(array.slice(i, i + size));
-  }
-  return result;
-}
+// function getDividedNum<T>(array: T[], size: number): T[][] {
+//   let result: T[][] = [];
+//   for (let i = 0; i < array.length; i += size) {
+//     result.push(array.slice(i, i + size));
+//   }
+//   return result;
+// }
 
-console.log(getDividedNum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+// console.log(getDividedNum([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
 
 // V-TASK:
 
