@@ -11,9 +11,8 @@ router.post("/member/login", memberController.login);
 router.post("/member/logout", memberController.verifyAuth, memberController.logout);
 router.get("/member/detail", memberController.verifyAuth, memberController.getMemberDetail);
 
-// Product
 router.post("/member/update", memberController.verifyAuth, uploader("members").single("memberImage"), memberController.updateMember);
 
-router.post("/member/top-users", memberController.getTopUusers);
-
+router.get("/member/top-users", memberController.getTopUsers);
+// Product
 export default router;

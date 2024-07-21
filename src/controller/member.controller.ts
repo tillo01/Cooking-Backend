@@ -89,9 +89,9 @@ memberController.getMemberDetail = async (req: ExtendedRequest, res: Response) =
   }
 };
 
-memberController.getTopUusers = async (req: Request, res: Response) => {
+memberController.getTopUsers = async (req: Request, res: Response) => {
   try {
-    console.log("getTopUusers");
+    console.log("getTopUsers");
     const result = await memberService.getTopUsers();
     res.status(HttpCode.OK).json(result);
   } catch (err) {
