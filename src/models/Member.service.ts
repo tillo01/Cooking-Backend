@@ -31,7 +31,7 @@ class MemberService {
     try {
       const result = await this.memberModel.create(input);
       result.memberPassword = "";
-      return result;
+      return result.toJSON();
     } catch (err) {
       console.error("Error mode:signup", err);
 
