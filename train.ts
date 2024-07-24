@@ -31,23 +31,41 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 //  Shunday function yozing, uni object va string parapetrlari bolsin. Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
 //  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
 
-function getAccuranceOfStr(obj: any, key: string): any {
-  let count = 0;
-  let k = "";
-  for (k in obj) {
-    if (k === key) {
-      count++;
+// Y-TASK:
+
+//  Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
+//  MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
+
+function getSameNums(arr1: any[], arr2: any[]): any {
+  let arrRes2: number[] = [];
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr2.includes(arr1[i])) {
+      arrRes2.push(arr1[i]);
     }
   }
-
-  if (typeof obj[k] === "object" && obj[k] !== null) {
-    count += getAccuranceOfStr(obj[k], key);
-  }
-  return count;
+  return arrRes2;
 }
-
-const result = getAccuranceOfStr({ model: "BUgatti", steer: { model: "Hankook", size: 30 } }, "model");
+const result = getSameNums([3, 4, 5], [3, 6, 8, 4]);
 console.log(result);
+
+// function getAccuranceOfStr(obj: any, key: string): any {
+//   let count = 0;
+//   let k = "";
+//   for (k in obj) {
+//     if (k === key) {
+//       count++;
+//     }
+//   }
+
+//   if (typeof obj[k] === "object" && obj[k] !== null) {
+//     count += getAccuranceOfStr(obj[k], key);
+//   }
+//   return count;
+// }
+
+// const result = getAccuranceOfStr({ model: "BUgatti", steer: { model: "Hankook", size: 30 } }, "model");
+// console.log(result);
 
 // function getAccuranceOfStr(obj: Object, key: string): number {
 //   let count = 0;
