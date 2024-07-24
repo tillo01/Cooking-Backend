@@ -5,7 +5,7 @@ import { T } from "../libs/types/common";
 
 import MemberService from "../models/Member.service";
 import { AdminRequest, LoginInput, MemberInput } from "../libs/types/member";
-import { MemberType } from "../libs/enums/member.type";
+import { MemberType } from "../libs/enums/member.enum";
 import Errors, { HttpCode, Message } from "../libs/types/Errors";
 
 const memberService = new MemberService();

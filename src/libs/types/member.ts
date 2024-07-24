@@ -1,7 +1,7 @@
 /** @format */
 
 import { ObjectId } from "mongoose";
-import { MemberStatus, MemberType } from "../enums/member.type";
+import { MemberStatus, MemberType } from "../enums/member.enum";
 import { Session } from "express-session";
 import { Request } from "express";
 
