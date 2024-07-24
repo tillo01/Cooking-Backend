@@ -8,6 +8,7 @@ import Errors from "../libs/types/Errors";
 import { shapeIntoMongooseObjectId } from "../libs/types/config";
 import { T } from "../libs/types/common";
 import { ProductStatus } from "../libs/enums/product.enum";
+import { ObjectId } from "mongoose";
 
 class ProductService {
   private readonly productModel;
@@ -56,6 +57,15 @@ class ProductService {
 
       throw new Errors(HttpCode.BAD_RQUEST, Message.CREATE_FAILED);
     }
+  }
+
+  public async getProduct(memberId: ObjectId | null, id: string): Promise<Product> {
+    const productId = shapeIntoMongooseObjectId(id);
+    let result = await this.productModel.findOne({ _id: productId, productStatus: ProductStatus.PROCESS }).exec();
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+    return result;
+
+    // if authenticated users => first => view log creation
   }
 
   public async updateChoosenProduct(id: string, input: ProductUpdateInput): Promise<Product> {
