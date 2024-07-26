@@ -25,29 +25,41 @@ Traditional Frontend Development => BSSR  => EJS (framework)
 Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
 
 */
+// Z-TASK:
 
-// X-TASK:
+// Shunday function yozing, uni sonlardan tashkil topgan array qabul qilsin. Function arraydagi juft sonlarni yigindisini qaytarsin
+// MASALAN: sumEvens([1,2,3]) return 2
 
-//  Shunday function yozing, uni object va string parapetrlari bolsin. Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
-//  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+function getPairNums(str: number[]): number[] {
+  let res: number[] = [];
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] % 2 == 0) {
+      res.push(str[i]);
+    }
+  }
+  return res;
+}
+
+const result = getPairNums([2, 3, 7, 5, 8]);
+console.log(result);
 
 // Y-TASK:
 
 //  Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
 //  MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
 
-function getSameNums(arr1: any[], arr2: any[]): any {
-  let arrRes2: number[] = [];
+// function getSameNums(arr1: any[], arr2: any[]): any {
+//   let arrRes2: number[] = [];
 
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr2.includes(arr1[i])) {
-      arrRes2.push(arr1[i]);
-    }
-  }
-  return arrRes2;
-}
-const result = getSameNums([3, 4, 5], [3, 6, 8, 4]);
-console.log(result);
+//   for (let i = 0; i < arr1.length; i++) {
+//     if (arr2.includes(arr1[i])) {
+//       arrRes2.push(arr1[i]);
+//     }
+//   }
+//   return arrRes2;
+// }
+// const result = getSameNums([3, 4, 5], [3, 6, 8, 4]);
+// console.log(result);
 
 // function getAccuranceOfStr(obj: any, key: string): any {
 //   let count = 0;

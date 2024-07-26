@@ -6,6 +6,7 @@ import memberController from "./controller/member.controller";
 import uploader from "./libs/utils/uploader";
 import productController from "./controller/product.controller";
 import orderCotroller from "./controller/order.controller";
+import orderController from "./controller/order.controller";
 // Member
 router.get("/member/restaurant", memberController.getRestaurant);
 router.post("/member/signup", memberController.signup);
@@ -24,4 +25,6 @@ export default router;
 
 // Order
 
-router.post("/order/create", memberController.verifyAuth, orderCotroller.createOrder);
+router.post("/order/create", memberController.verifyAuth, orderController.createOrder);
+
+router.get("/order/all", memberController.verifyAuth, orderController.getMyOrders);
