@@ -1,6 +1,6 @@
 /** @format */
 
-export enum orderStatus {
+export enum OrderStatus {
   PAUSE = "PAUSE",
   PROCESS = "PROCESS",
   FINISH = "FINISH",
