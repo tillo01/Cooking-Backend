@@ -10,6 +10,9 @@ import { shapeIntoMongooseObjectId } from "../libs/types/config";
 // CONTROLLER SHU YERGA JONATADI FURST VA KEGIN MODELDAN SCHEMA MODELGA KETADI
 
 class MemberService {
+  static addUserPoint(member: Member, arg1: number) {
+    throw new Error("Method not implemented.");
+  }
   private readonly memberModel;
 
   constructor() {
@@ -77,6 +80,17 @@ class MemberService {
       .exec();
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
     return result;
+  }
+
+  public async addUserPoint(member: Member, point: number): Promise<Member> {
+    const memberId = shapeIntoMongooseObjectId(member._id);
+    return await this.memberModel
+      .findOneAndUpdate(
+        { _id: memberId, memberType: MemberType.USER, memberStatus: MemberStatus.ACTIVE },
+        { $inc: { memberPoints: point } },
+        { new: true }
+      )
+      .exec();
   }
   // SPA end
 

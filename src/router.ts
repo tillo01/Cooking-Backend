@@ -21,10 +21,13 @@ router.get("/member/top-users", memberController.getTopUsers);
 
 router.get("/product/all/", productController.getProducts);
 router.get("/product/:id", memberController.retriewAuth, productController.getProduct);
-export default router;
 
 // Order
 
 router.post("/order/create", memberController.verifyAuth, orderController.createOrder);
 
 router.get("/order/all", memberController.verifyAuth, orderController.getMyOrders);
+
+router.post("/order/update", memberController.verifyAuth, orderController.updateOrder);
+
+export default router;
