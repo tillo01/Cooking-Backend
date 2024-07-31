@@ -25,23 +25,37 @@ Traditional Frontend Development => BSSR  => EJS (framework)
 Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
 
 */
+
+// ZC-TASK:
+
+// Shunday function yozing, uni number parametri bolsin va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
+// MASALAN: celsiusToFahrenheit(0) return 32
+
+function toGet(celcius: number) {
+  let f: any;
+  f = (celcius * 9) / 5 + 32;
+  return f;
+}
+const res = toGet(0);
+console.log(res);
+
 // Z-TASK:
 
 // Shunday function yozing, uni sonlardan tashkil topgan array qabul qilsin. Function arraydagi juft sonlarni yigindisini qaytarsin
 // MASALAN: sumEvens([1,2,3]) return 2
 
-function getPairNums(str: number[]): number[] {
-  let res: number[] = [];
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] % 2 == 0) {
-      res.push(str[i]);
-    }
-  }
-  return res;
-}
+// function getPairNums(str: number[]): number[] {
+//   let res: number[] = [];
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] % 2 == 0) {
+//       res.push(str[i]);
+//     }
+//   }
+//   return res;
+// }
 
-const result = getPairNums([2, 3, 7, 5, 8]);
-console.log(result);
+// const result = getPairNums([2, 3, 7, 5, 8]);
+// console.log(result);
 
 // Y-TASK:
 

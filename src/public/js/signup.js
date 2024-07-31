@@ -17,6 +17,7 @@ $(function () {
         if (uploadFile) console.log(URL.createObjectURL(uploadFile));
         $(".upload-img-frame").attr("src", URL.createObjectURL(uploadFile)).addClass("succes");
       }
+
       filename = $(this)[0].files[0].name;
     }
     $(this).siblings(".upload-name").val(filename);

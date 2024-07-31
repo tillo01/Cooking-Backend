@@ -100,7 +100,7 @@ class MemberService {
     const exist = await this.memberModel.findOne({ memberType: MemberType.RESTAURANT }).exec();
     console.log("exist", exist);
 
-    if (exist) throw new Errors(HttpCode.BAD_RQUEST, Message.CREATE_FAILED);
+    if (!exist) throw new Errors(HttpCode.BAD_RQUEST, Message.CREATE_FAILED);
 
     console.log("before", input.memberPassword);
 
