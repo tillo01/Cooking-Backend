@@ -26,18 +26,39 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 */
 
+// // ZD-TASK:
+
+// // Shunday function yozing, uni number, array va number parametrlari bolsin va berilgan 1-parametr numberga teng indexni array ichidan topib 3-parametrdagi raqam bilan almashtirib yangilangan arrayni qaytarsin
+
+// MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
+function changeToArr(num: number, arr: number[], res: number): number[] {
+  let final: number[] = [];
+  const tookIt = arr.indexOf(num);
+
+  if (tookIt !== -1) {
+    arr[1] = res;
+  }
+
+  final = arr;
+
+  return final;
+}
+
+const result = changeToArr(1, [1, 3, 5, 6], 2);
+console.log(result);
+
 // ZC-TASK:
 
 // Shunday function yozing, uni number parametri bolsin va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
 // MASALAN: celsiusToFahrenheit(0) return 32
 
-function toGet(celcius: number) {
-  let f: any;
-  f = (celcius * 9) / 5 + 32;
-  return f;
-}
-const res = toGet(0);
-console.log(res);
+// function toGet(celcius: number) {
+//   let f: any;
+//   f = (celcius * 9) / 5 + 32;
+//   return f;
+// }
+// const res = toGet(0);
+// console.log(res);
 
 // Z-TASK:
 
