@@ -31,12 +31,13 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 // // Shunday function yozing, uni number, array va number parametrlari bolsin va berilgan 1-parametr numberga teng indexni array ichidan topib 3-parametrdagi raqam bilan almashtirib yangilangan arrayni qaytarsin
 
 // MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
+
 function changeToArr(num: number, arr: number[], res: number): number[] {
   let final: number[] = [];
   const tookIt = arr.indexOf(num);
 
   if (tookIt !== -1) {
-    arr[1] = res;
+    arr.splice(num, 1, res);
   }
 
   final = arr;
