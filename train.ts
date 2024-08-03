@@ -25,6 +25,48 @@ Traditional Frontend Development => BSSR  => EJS (framework)
 Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
 
 */
+// ZE-TASK:
+
+// Shunday function yozing, uni  string parametri bolsin. String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
+// MASALAN: removeDuplicate('stringg') return 'string'
+
+function getSame(sameW: string): string {
+   let newRe;
+   let final;
+
+   const result = new Set(sameW);
+   final = Array.from(result);
+   newRe = final.join("");
+   return newRe;
+}
+console.log(getSame("hello"));
+
+// function getIndex(str: string): any {
+//   let res = {};
+
+//   for (let i = 0; i < str.length; i++) {
+//     let chart = str.charAt(i);
+//     if (!res[chart]) {
+//       res[chart] = 1;
+//     } else {
+//       res[chart] += 1;
+//     }
+//   }
+//   return res;
+// }
+
+// console.log(getIndex("hellomynew"));
+
+// let str = "hello";
+// let symbol = "";
+// for (let i = 0; i < str.length; i++) {
+//   if (i % 2 === 0) {
+//     symbol += "*";
+//   } else {
+//     symbol += str.charAt(i);
+//   }
+// }
+// console.log(symbol);
 
 // // ZD-TASK:
 
@@ -32,21 +74,21 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 // MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
 
-// function changeToArr(num: number, arr: number[], res: number): number[] {
-//   let final: number[] = [];
-//   const tookIt = arr.indexOf(num);
+function changeToArr(num: number, arr: number[], res: number): number[] {
+   let final: number[] = [];
+   const tookIt = arr.indexOf(num);
 
-//   if (tookIt !== -1) {
-//     arr.splice(num, 1, res);
-//   }
+   if (tookIt !== -1) {
+      arr.splice(num, 1, res);
+   }
 
-//   final = arr;
+   final = arr;
 
-//   return final;
-// }
+   return final;
+}
 
-// const result = changeToArr(1, [1, 3, 5, 6], 2);
-// console.log(result);
+const result = changeToArr(1, [1, 3, 5, 6], 2);
+console.log(result);
 
 // ZC-TASK:
 
