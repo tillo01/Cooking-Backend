@@ -32,21 +32,21 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 // MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
 
-function changeToArr(num: number, arr: number[], res: number): number[] {
-  let final: number[] = [];
-  const tookIt = arr.indexOf(num);
+// function changeToArr(num: number, arr: number[], res: number): number[] {
+//   let final: number[] = [];
+//   const tookIt = arr.indexOf(num);
 
-  if (tookIt !== -1) {
-    arr.splice(num, 1, res);
-  }
+//   if (tookIt !== -1) {
+//     arr.splice(num, 1, res);
+//   }
 
-  final = arr;
+//   final = arr;
 
-  return final;
-}
+//   return final;
+// }
 
-const result = changeToArr(1, [1, 3, 5, 6], 2);
-console.log(result);
+// const result = changeToArr(1, [1, 3, 5, 6], 2);
+// console.log(result);
 
 // ZC-TASK:
 
