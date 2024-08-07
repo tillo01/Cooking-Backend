@@ -25,21 +25,41 @@ Traditional Frontend Development => BSSR  => EJS (framework)
 Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
 
 */
+// ZF-TASK:
+
+// Shunday function yozing, uni string parametri bolsin. String ichidagi har bir sozni bosh harflarini katta harf qilib qaytarsin lekin 1 yoki 2 harfdan iborat sozlarni esa oz holicha qoldirsin.
+// MASALAN: capitalizeWords('name should be a string') return 'Name Should be a String'
+
+function getCapital(str: string): any {
+   let words = str.split(" ");
+
+   words = words.map((word) => {
+      if (word.length > 2) {
+         return word[0].toUpperCase() + word.slice(1);
+      }
+      return word;
+   });
+
+   return words.join(" ");
+}
+const res = getCapital("hello my name is tillo");
+console.log(res);
+
 // ZE-TASK:
 
 // Shunday function yozing, uni  string parametri bolsin. String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
 // MASALAN: removeDuplicate('stringg') return 'string'
 
-function getSame(sameW: string): string {
-   let newRe;
-   let final;
+// function getSame(sameW: string): string {
+//    let newRe;
+//    let final;
 
-   const result = new Set(sameW);
-   final = Array.from(result);
-   newRe = final.join("");
-   return newRe;
-}
-console.log(getSame("hello"));
+//    const result = new Set(sameW);
+//    final = Array.from(result);
+//    newRe = final.join("");
+//    return newRe;
+// }
+// console.log(getSame("hello"));
 
 // function getIndex(str: string): any {
 //   let res = {};
@@ -74,21 +94,21 @@ console.log(getSame("hello"));
 
 // MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
 
-function changeToArr(num: number, arr: number[], res: number): number[] {
-   let final: number[] = [];
-   const tookIt = arr.indexOf(num);
+// function changeToArr(num: number, arr: number[], res: number): number[] {
+//    let final: number[] = [];
+//    const tookIt = arr.indexOf(num);
 
-   if (tookIt !== -1) {
-      arr.splice(num, 1, res);
-   }
+//    if (tookIt !== -1) {
+//       arr.splice(num, 1, res);
+//    }
 
-   final = arr;
+//    final = arr;
 
-   return final;
-}
+//    return final;
+// }
 
-const result = changeToArr(1, [1, 3, 5, 6], 2);
-console.log(result);
+// const result = changeToArr(1, [1, 3, 5, 6], 2);
+// console.log(result);
 
 // ZC-TASK:
 
