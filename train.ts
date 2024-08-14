@@ -25,25 +25,69 @@ Traditional Frontend Development => BSSR  => EJS (framework)
 Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
 
 */
+// ZH-TASK:
+
+// Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin.
+// MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
+
+// ZI-TASK:
+
+// Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
+// MASALAN: delayHelloWorld("Hello World") return "Hello World"
+
+function getHello() {
+   console.log("Hello World");
+}
+setTimeout(getHello, 3000);
+
+// function getNum(arr: number[]): number[] {
+//    const maxNum = Math.max(...arr);
+
+//    let missNum: number[] = [];
+
+//    for (let i = 1; i <= maxNum; i++) {
+//       if (!arr.includes(i)) {
+//          missNum.push(i);
+//       }
+//    }
+
+//    return missNum;
+// }
+
+// console.log(getNum([1, 55, 77]));
+
+// ZG-TASK:
+
+// Shunday function yozing, u berilgan string parametrni snake casega otkazib qaytarsin.
+// MASALAN: capitalizeWords('name should be a string') return 'name_should_be_a_string'
+
+// function getSnake(str: string): any {
+//    let words = str.split(" ");
+
+//    return words.join("_");
+// }
+// const res1 = getSnake("hello my name is tillo");
+// console.log(res1);
+
 // ZF-TASK:
 
 // Shunday function yozing, uni string parametri bolsin. String ichidagi har bir sozni bosh harflarini katta harf qilib qaytarsin lekin 1 yoki 2 harfdan iborat sozlarni esa oz holicha qoldirsin.
 // MASALAN: capitalizeWords('name should be a string') return 'Name Should be a String'
 
-function getCapital(str: string): any {
-   let words = str.split(" ");
+// function getCapital(str: string): any {
+//    let words = str.split(" ");
 
-   words = words.map((word) => {
-      if (word.length > 2) {
-         return word[0].toUpperCase() + word.slice(1);
-      }
-      return word;
-   });
+//    words = words.map((word) => {
+//       if (word.length > 2) {
+//          return word[0].toUpperCase() + word.slice(1);
+//       }
+//       return word;
+//    });
 
-   return words.join(" ");
-}
-const res = getCapital("hello my name is tillo");
-console.log(res);
+//    return words.join("_");
+// }
+// const res = getCapital("hello my name is tillo");
+// console.log(res);
 
 // ZE-TASK:
 
