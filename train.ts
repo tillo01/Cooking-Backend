@@ -25,20 +25,58 @@ Traditional Frontend Development => BSSR  => EJS (framework)
 Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
 
 */
-// ZH-TASK:
 
-// Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin.
-// MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
+// function getKebab(str: string): any {
+//    let words = str.split(" ");
+
+//    return words.join("-");
+// }
+// const res1 = getKebab("hello my name is tillo");
+// console.log(res1);
+
+// const stopAfter = setInterval(function () {
+//    let max = 7;
+//    let min = 2;
+//    let random;
+//    random = Math.floor(Math.random() * (max - min + 1)) + min;
+//    console.log(random);
+// }, 1000);
+
+// setTimeout(() => {
+//    clearInterval(stopAfter);
+//    console.log("Stopped");
+// }, 5000);
+
+// function getNestedNums(arr: any): any {
+//    let res = 0;
+
+//    for (let i = 0; i < arr.length; i++) {
+//       if (Array.isArray(arr[i])) {
+//          res += getNestedNums(arr[i]);
+//       } else if (typeof arr[i] === "number") {
+//          res += arr[i];
+//       }
+//    }
+
+//    return res;
+// }
+
+// console.log(getNestedNums([2, 3, [3, [5, 6]]]));
 
 // ZI-TASK:
 
 // Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
 // MASALAN: delayHelloWorld("Hello World") return "Hello World"
 
-function getHello() {
-   console.log("Hello World");
-}
-setTimeout(getHello, 3000);
+// function getHello() {
+//    console.log("Hello World");
+// }
+// setInterval(getHello, 1000);
+
+// ZH-TASK:
+
+// Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin.
+// MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]
 
 // function getNum(arr: number[]): number[] {
 //    const maxNum = Math.max(...arr);
@@ -530,20 +568,27 @@ setTimeout(getHello, 3000);
 // Shunday function tuzingki unga integerlardan iborat array pass bolsin va function bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
 // MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
 
-// const numbers = [12, 31, 44, 22, 55];
-// let highestDigit = -1;
+const numbers = [5, 21, 12, 21, 8];
+let largestOne = 0;
+let largestIndex = 0;
 
-// function getHighestDigit() {
-//     for (let count of numbers) {
-//         while (count > 0) {
-//             let digit = count % 10;
-//             if (digit > highestDigit) {
-//                 highestDigit = digit;
-//             }
-//             count = Math.floor(count / 10);
-//         }
-//     }
-// }
+function gteBigOne() {
+   for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] > largestOne) {
+         largestOne = numbers[i]; // Update the largest number found
+      }
+   }
 
-// getHighestDigit();
-// console.log(highestDigit);
+   // Now find the largest digit in the largest number
+   let digits = largestOne.toString()[1]; // Convert the largest number to a string
+   for (let j = 0; j < digits.length; j++) {
+      let currentDigit = parseInt(digits[j], 10);
+      if (currentDigit > largestIndex) {
+         largestIndex = currentDigit; // Update the largest digit found
+      }
+   }
+
+   return largestIndex;
+}
+
+console.log(gteBigOne());
