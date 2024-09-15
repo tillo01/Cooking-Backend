@@ -12,6 +12,8 @@
  * @format
  */
 
+import { TRUE } from "sass";
+
 /*
 API:
 Traditional API
@@ -22,9 +24,100 @@ GraphQL API
 
 /*
 Traditional Frontend Development => BSSR  => EJS (framework)
-Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library)
+Modern Frontend Development      => SPA   => frontend miz backend dan qabul qiladi (HTMl di ozi xosil qiladi) REACT (library
+
 
 */
+// ZU-TASK:
+
+// Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yig'indisini qaytarsin.
+// MASALAN: sumOfUnique([1,2,3,2]) return 4
+
+function getUniqueArr(arr: number[]) {
+   const getArr = Array.from(new Set(arr));
+   const result = getArr.reduce((total) => {
+      return total + total;
+   });
+   return result;
+}
+console.log(getUniqueArr([1, 2, 3, 4, 4, 2]));
+
+// function getSameNums(arr1: any[], arr2: any[]): any {
+//   let arrRes2: number[] = [];
+
+//   for (let i = 0; i < arr1.length; i++) {
+//     if (arr2.includes(arr1[i])) {
+//       arrRes2.push(arr1[i]);
+//     }
+//   }
+//   return arrRes2;
+// }
+// const result = getSameNums([3, 4, 5], [3, 6, 8, 4]);
+// console.log(result);
+
+// function getPaired(str: string) {
+//    let coount: string[] = [];
+//    for (let i = 0; i < str.length; i++) {
+//       let exam = str[i];
+//       if (str[i] === "(") {
+//          coount.push(exam);
+//       }
+//       for (let j = 0; j < exam.length; j++) {
+//          if (exam[j] === ")") {
+//             coount.push(exam[j]);
+//          }
+//          if (exam === exam[j]) {
+//             return true;
+//          }
+//       }
+//    }
+// }
+// function getPaired(str: any) {
+//    let count = 0;
+//    for (let i = 0; i < str.length; i++) {
+//       if (str[i] === "(") {
+//          count += 1;
+//       } else if (str[i] === ")") {
+//          count -= 1;
+//       }
+//       if (count < 0) {
+//          return false;
+//       }
+//    }
+//    return count === 0;
+// }
+
+// console.log(getPaired("string(), has())"));
+// function getReverseInt(int: number) {
+//    let reverseInt = int.toString().split(" ").reverse().join(" ");
+//    let result = "";
+//    for (let i = reverseInt.length - 1; i >= 0; i--) {
+//       result += reverseInt[i];
+//    }
+//    return result;
+// }
+// console.log(getReverseInt(12345678));
+
+// function reverseSentence(str:string){
+//   let asItis = str.split(' ').reverse() .join( ' ');
+
+//     let example = ' ';
+
+//     for (let i = asItis.length -1; i >= 0 ; i--) {
+//       example+=asItis[i];
+
+//     }
+
+//     return example;
+
+// }
+// const result = reverseSentence("hello how are you");
+
+// console.log(result);
+// ZL-TASK:
+
+// Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin. Bosh harflarni kichik harflarga ham otkazsin.
+// MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
 
 // function getKebab(str: string): any {
 //    let words = str.split(" ");
@@ -444,6 +537,8 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 // L-TASK:
 
+// here =======================================================================================================>>>>>>>> 24.08.2024
+
 // Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
 // MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
 
@@ -505,31 +600,42 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 
 // console.log(findLongestWord("I come from Uzbekistan"));
 
+// function getLongest(str: any) {
+//    let result = str.split(" ");
+
+//    let shortest = result.reduce((shortOne: any, currOne: any) => {
+//       return currOne.length < shortOne.length ? currOne : shortOne;
+//    }, result[0]);
+
+//    return shortest;
+// }
+
+// console.log(getLongest("Im from australia"));
+
+// here 20.08.2024 ==============================================================================================>
 // I-TASK:
 
 // Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
 // MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
 
-// function getMajorEle(numbers: number []){
-//   let maxcount = 0;
-//   let majorEle = 0;
-//   for (let i = 0; i < numbers.length; i++) {
-//     let  count = 0;
-//     for (let j = 0; j < numbers.length; j++)
-//     if (numbers[i] == numbers[j]) {
-//       count++;
-
-//     }
-// if (count  >= maxcount) {
-//   maxcount = count
-//   majorEle = numbers[i];
+// function getMajorEle(numbers: number[]) {
+//    let maxcount = 0;
+//    let majorEle = 0;
+//    for (let i = 0; i < numbers.length; i++) {
+//       let count = 0;
+//       for (let j = 0; j < numbers.length; j++)
+//          if (numbers[i] == numbers[j]) {
+//             count++;
+//          }
+//       if (count >= maxcount) {
+//          maxcount = count;
+//          majorEle = numbers[i];
+//       }
+//    }
+//    return majorEle;
 // }
 
-// }
-// return majorEle;
-// }
-
-// const result = getMajorEle([3,4,6,7,3,5,3,4,3,4,4]);
+// const result = getMajorEle([3, 4, 6, 7, 3, 5, 3, 4, 3, 4, 4]);
 
 // console.log(result);
 
@@ -538,29 +644,28 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 // Shunday function tuzing, unga string argument pass bolsin. Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
 // MASALAN: getDigits("m14i1t") return qiladi "141"
 
-// function getDigits(digit:string):string{
-//     let result: string = '';
-//     for(let char of digit){
-//       if(!isNaN(Number(char))){
-// result += char;
+// function getDigits(digit: string): string {
+//    let result: string = "";
+//    for (let ok of digit) {
+//       if (!isNaN(Number(ok))) {
+//          result += ok;
 //       }
-//     }
-//     return  result;
-
+//    }
+//    return result;
 // }
 
-// console.log(getDigits("ewknf242qwqwdqq344"));
+// console.log(getDigits("m14it"));
 
 // H-TASK:
 
 // shunday function tuzing, u integerlardan iborat arrayni argument sifatida qabul qilib, faqat positive qiymatlarni olib string holatda return qilsin
-// MASALAN: getPositive([1, -4, 2]) return qiladi "12"
+// MASALAN: getPositive([1, -4, 2, ]) return qiladi "12"
 
 // function getPositive(numbers: number[]): string {
-//     return numbers.filter(num => num > 0).join('');
+//    return numbers.filter((num) => num > 0).join("");
 // }
 
-// const result = getPositive([1, -4, 2,5,7,-8]);
+// const result = getPositive([1, -4, 2, 5, 7, -8]);
 // console.log(result);
 
 // G-TASK:
@@ -568,27 +673,54 @@ Modern Frontend Development      => SPA   => frontend miz backend dan qabul qila
 // Shunday function tuzingki unga integerlardan iborat array pass bolsin va function bizga osha arrayning eng katta qiymatiga tegishli birinchi indexni qaytarsin.
 // MASALAN: getHighestIndex([5, 21, 12, 21, 8]) return qiladi 1 sonini.
 
-const numbers = [5, 21, 12, 21, 8];
-let largestOne = 0;
-let largestIndex = 0;
+// const numbers = [5, 21, 12, 21, 8];
+// let largestOne = 0;
+// let largestIndex = 0;
 
-function gteBigOne() {
-   for (let i = 0; i < numbers.length; i++) {
-      if (numbers[i] > largestOne) {
-         largestOne = numbers[i]; // Update the largest number found
-      }
-   }
+// function gteBigOne() {
+//    for (let i = 0; i < numbers.length; i++) {
+//       if (numbers[i] > largestOne) {
+//          largestOne = numbers[i]; // Update the largest number found
+//       }
+//    }
 
-   // Now find the largest digit in the largest number
-   let digits = largestOne.toString()[1]; // Convert the largest number to a string
-   for (let j = 0; j < digits.length; j++) {
-      let currentDigit = parseInt(digits[j], 10);
-      if (currentDigit > largestIndex) {
-         largestIndex = currentDigit; // Update the largest digit found
-      }
-   }
+//    // Now find the largest digit in the largest number
+//    let digits = largestOne.toString()[1]; // Convert the largest number to a string
+//    for (let j = 0; j < digits.length; j++) {
+//       let currentDigit = parseInt(digits[j], 10);
+//       if (currentDigit > largestIndex) {
+//          largestIndex = currentDigit; // Update the largest digit found
+//       }
+//    }
 
-   return largestIndex;
-}
+//    return largestIndex;
+// }
 
-console.log(gteBigOne());
+// console.log(gteBigOne());
+
+// Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
+// MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
+
+// const numbers = [1, 2, 3, 4, 5, 4, 3, 4];
+// @ts-nocheck
+// function getMotOne(str: any) {
+//    let most = {};
+//    for (let i = 0; i < str.length; i++) {
+//       let num = str[i];
+//       if (most[num]) {
+//          most[num]++;
+//       } else {
+//          most[num] = 1;
+//       }
+//    }
+//    let freNum = 0;
+//    let mostfreqNum: any = null;
+//    for (let num in most) {
+//       if (most[num] > freNum) {
+//          freNum = most[num];
+//          mostfreqNum = num;
+//       }
+//    }
+//    return mostfreqNum;
+// }
+// console.log(getMotOne([1, 3, 4, 5, 7, 3, 13]));
