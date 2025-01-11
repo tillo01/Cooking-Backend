@@ -1,5 +1,7 @@
 # @format
 
+version: "3.8" # Make sure the version is set correctly
+
 services:
    cooking:
       container_name: cooking-api
@@ -17,5 +19,8 @@ services:
          - MONGO_URL=mongodb+srv://example:4ROohect0dIdKT13@cluster0.gudhgmq.mongodb.net/Burak
          - SESSION_SECRET=jwnfjknewfjnwefjnjwenf
          - SECRET_TOKEN=iwnfuiwenfuwej342minqdin!2r
-
       command: bash -c "npm install && npm run build && npm run start"
+
+networks:
+   client-network: # Define the client-network here
+      driver: bridge
