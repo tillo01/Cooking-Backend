@@ -1,9 +1,7 @@
 /** @format */
 
 import dotenv from "dotenv";
-dotenv.config({
-   path: process.env.NODE_ENV === "production" ? ".env.production" : ".env",
-});
+dotenv.config();
 import mongoose from "mongoose";
 import server from "./app";
 mongoose
