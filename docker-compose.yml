@@ -11,7 +11,7 @@ services:
          - ./:/usr/src/cooking
       working_dir: /usr/src/cooking
       networks:
-         - monorepo-network
+         - client-network
       environment:
          - PORT=3003
          - MONGO_URL=mongodb+srv://example:4ROohect0dIdKT13@cluster0.gudhgmq.mongodb.net/Burak
