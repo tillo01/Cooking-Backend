@@ -12,11 +12,10 @@ services:
       working_dir: /usr/src/cooking
       networks:
          - monorepo-network
+      environment:
+         - PORT=3003
+         - MONGO_URL=mongodb+srv://example:4ROohect0dIdKT13@cluster0.gudhgmq.mongodb.net/Burak
+         - SESSION_SECRET=jwnfjknewfjnwefjnjwenf
+         - SECRET_TOKEN=iwnfuiwenfuwej342minqdin!2r
 
-      # FOR PRODUCTION
-      command:
-         bash -c "rm -rf dist && npm install && npm run build && npm run start"
-
-networks:
-   monorepo-network:
-      driver: bridge
+      command: bash -c "npm install && npm run build && npm run start"
