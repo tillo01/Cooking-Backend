@@ -11,7 +11,7 @@ services:
          - ./:/usr/src/cooking
       working_dir: /usr/src/cooking
       networks:
-         - monorepo-network
+         - app-network
       environment:
          - PORT=3003
          - MONGO_URL=mongodb+srv://example:4ROohect0dIdKT13@cluster0.gudhgmq.mongodb.net/Burak
@@ -20,5 +20,5 @@ services:
       command: bash -c "npm install && npm run build && npm run start"
 
 networks:
-   monorepo-network:
+   app-network:
       driver: bridge
