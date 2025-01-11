@@ -1,7 +1,5 @@
 # @format
 
-version: "3.8" # Make sure the version is set correctly
-
 services:
    cooking:
       container_name: cooking-api
@@ -13,7 +11,7 @@ services:
          - ./:/usr/src/cooking
       working_dir: /usr/src/cooking
       networks:
-         - client-network
+         - monorepo-network
       environment:
          - PORT=3003
          - MONGO_URL=mongodb+srv://example:4ROohect0dIdKT13@cluster0.gudhgmq.mongodb.net/Burak
@@ -22,5 +20,5 @@ services:
       command: bash -c "npm install && npm run build && npm run start"
 
 networks:
-   client-network: # Define the client-network here
+   monorepo-network:
       driver: bridge
